@@ -7,7 +7,7 @@ function Layout() {
     if (typeof window === 'undefined' || !window.Sakura) return undefined
 
     const sakura = new window.Sakura('body', {
-      delay: 440,
+      delay: 295,
       fallSpeed: 1.25,
       minSize: 10,
       maxSize: 16,

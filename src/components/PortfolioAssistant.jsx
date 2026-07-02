@@ -43,7 +43,7 @@ function PortfolioAssistant() {
         const rawText = await response.text()
         throw new Error(
           rawText.includes('<!doctype') || rawText.includes('<html')
-            ? 'AI backend is not running. Use npm run dev:full, or start npm run api and npm run dev together.'
+            ? 'AI backend is unavailable. If this is the deployed site, verify the EdgeOne /api/chat cloud function and DEEPSEEK_API_KEY.'
             : 'AI assistant returned an unexpected response format.',
         )
       }

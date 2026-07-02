@@ -15,7 +15,7 @@
 }
 
 .page-glow-left {
-  background: rgba(255, 171, 213, 0.28);
+  background: rgba(255, 108, 190, 0.42);
   height: 360px;
   left: -90px;
   top: 120px;
@@ -23,7 +23,7 @@
 }
 
 .page-glow-right {
-  background: rgba(149, 196, 255, 0.24);
+  background: rgba(102, 170, 255, 0.38);
   height: 420px;
   right: -120px;
   top: 40px;
@@ -115,9 +115,9 @@ body .sakura {
 .panel,
 .contact-layout {
   backdrop-filter: blur(18px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(245, 247, 255, 0.7));
+  background: linear-gradient(180deg, rgba(255, 248, 253, 0.86), rgba(238, 245, 255, 0.84));
   border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 24px 80px rgba(132, 149, 199, 0.14);
+  box-shadow: 0 24px 80px rgba(132, 149, 199, 0.18);
 }
 
 .hero-main {
@@ -140,8 +140,8 @@ body .sakura {
 
 .hero-main::before {
   background:
-    radial-gradient(circle at 0% 0%, rgba(255, 188, 223, 0.48), transparent 32%),
-    radial-gradient(circle at 100% 14%, rgba(170, 210, 255, 0.42), transparent 34%);
+    radial-gradient(circle at 0% 0%, rgba(255, 132, 201, 0.72), transparent 34%),
+    radial-gradient(circle at 100% 14%, rgba(117, 187, 255, 0.64), transparent 36%);
   content: '';
   inset: 0;
   position: absolute;
@@ -232,8 +232,8 @@ body .sakura {
 }
 
 .button.primary {
-  background: linear-gradient(135deg, #ffb9d8, #9bc9ff);
-  box-shadow: 0 18px 40px rgba(181, 163, 255, 0.2);
+  background: linear-gradient(135deg, #ff84c7, #78b7ff);
+  box-shadow: 0 18px 40px rgba(165, 126, 233, 0.28);
   color: #2d2746;
 }
 
@@ -275,8 +275,8 @@ body .sakura {
 
 .highlight-strip a:hover,
 .highlight-strip a:focus-visible {
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 10px 24px rgba(181, 163, 255, 0.14);
+  background: linear-gradient(135deg, rgba(255, 224, 241, 0.86), rgba(221, 236, 255, 0.86));
+  box-shadow: 0 10px 24px rgba(181, 163, 255, 0.18);
   transform: translateY(-1px);
 }
 
@@ -384,7 +384,7 @@ body .sakura {
 
 .chat-window {
   background:
-    linear-gradient(180deg, rgba(255, 247, 252, 0.88), rgba(244, 248, 255, 0.84)),
+    linear-gradient(180deg, rgba(255, 236, 246, 0.92), rgba(233, 243, 255, 0.9)),
     rgba(255, 255, 255, 0.8);
   border-radius: 24px;
   display: grid;
@@ -410,7 +410,7 @@ body .sakura {
 }
 
 .chat-bubble.user {
-  background: linear-gradient(135deg, rgba(255, 191, 223, 0.82), rgba(167, 206, 255, 0.82));
+  background: linear-gradient(135deg, rgba(255, 133, 198, 0.9), rgba(115, 182, 255, 0.9));
   color: #2d2746;
   justify-self: end;
 }
@@ -444,7 +444,7 @@ body .sakura {
 }
 
 .chat-input button {
-  background: linear-gradient(135deg, #ffb9d8, #9bc9ff);
+  background: linear-gradient(135deg, #ff84c7, #78b7ff);
   border: 0;
   border-radius: 999px;
   color: #2d2746;
@@ -494,7 +494,7 @@ body .sakura {
 }
 
 .home-photo-media::after {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(245, 248, 255, 0.14));
+  background: linear-gradient(180deg, rgba(255, 218, 238, 0.06), rgba(216, 233, 255, 0.2));
   content: '';
   inset: 0;
   position: absolute;
@@ -559,8 +559,8 @@ body .sakura {
 
 .photo-feature-media {
   background:
-    radial-gradient(circle at 14% 12%, rgba(255, 206, 228, 0.18), transparent 30%),
-    radial-gradient(circle at 86% 16%, rgba(169, 207, 255, 0.18), transparent 28%);
+    radial-gradient(circle at 14% 12%, rgba(255, 150, 205, 0.28), transparent 32%),
+    radial-gradient(circle at 86% 16%, rgba(118, 185, 255, 0.26), transparent 30%);
   padding: 26px 26px 0;
 }
 
@@ -614,7 +614,7 @@ body .sakura {
 
 .story-card {
   background:
-    linear-gradient(180deg, rgba(255, 244, 250, 0.76), rgba(240, 245, 255, 0.8)),
+    linear-gradient(180deg, rgba(255, 232, 244, 0.9), rgba(232, 242, 255, 0.9)),
     rgba(255, 255, 255, 0.76);
 }
 
@@ -660,7 +660,7 @@ body .sakura {
 
 .about-panel.quote {
   background:
-    linear-gradient(180deg, rgba(242, 248, 255, 0.92), rgba(255, 241, 249, 0.86)),
+    linear-gradient(180deg, rgba(227, 241, 255, 0.94), rgba(255, 226, 241, 0.92)),
     rgba(255, 255, 255, 0.82);
 }
 
@@ -800,7 +800,7 @@ body .sakura {
 
 .skill-marquee {
   background:
-    linear-gradient(145deg, rgba(255, 242, 248, 0.72), rgba(239, 245, 255, 0.74)),
+    linear-gradient(145deg, rgba(255, 228, 240, 0.84), rgba(228, 240, 255, 0.84)),
     rgba(255, 255, 255, 0.58);
   border: 0;
   border-radius: 22px;
@@ -861,7 +861,7 @@ body .sakura {
 .skill-badge {
   align-items: center;
   background:
-    linear-gradient(145deg, rgba(255, 205, 227, 0.42), rgba(196, 220, 255, 0.28)),
+    linear-gradient(145deg, rgba(255, 177, 214, 0.56), rgba(164, 203, 255, 0.42)),
     rgba(255, 255, 255, 0.92);
   border: 0;
   border-radius: 999px;
@@ -897,7 +897,7 @@ body .sakura {
 .skill-badge:hover,
 .skill-badge:focus-visible {
   background:
-    linear-gradient(145deg, rgba(255, 215, 233, 0.58), rgba(204, 227, 255, 0.42)),
+    linear-gradient(145deg, rgba(255, 188, 221, 0.7), rgba(177, 211, 255, 0.56)),
     rgba(255, 255, 255, 0.98);
   box-shadow: 0 14px 28px rgba(187, 198, 233, 0.18);
   transform: translateY(-2px);
