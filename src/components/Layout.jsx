@@ -1,8 +1,13 @@
 import { useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { trackVisitor } from '../lib/analytics'
 import { navItems } from '../siteData'
 
 function Layout() {
+  useEffect(() => {
+    trackVisitor()
+  }, [])
+
   useEffect(() => {
     if (typeof window === 'undefined' || !window.Sakura) return undefined
 
@@ -32,6 +37,10 @@ function Layout() {
 
   return (
     <main className="site-shell">
+      <div className="ambient-orbs" aria-hidden="true">
+        <div className="ambient-orb ambient-orb-pink"></div>
+        <div className="ambient-orb ambient-orb-blue"></div>
+      </div>
       <div className="page-glow page-glow-left" aria-hidden="true"></div>
       <div className="page-glow page-glow-right" aria-hidden="true"></div>
 

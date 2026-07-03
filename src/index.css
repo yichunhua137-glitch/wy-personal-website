@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 :root {
   --accent-strong: #d84f98;
   --bg: #eef4ff;
@@ -5,12 +7,12 @@
   --surface: #ffffff;
   --text-strong: #2f3258;
   color: var(--text-strong);
+  font-size: 18px;
   font-family:
-    "Trebuchet MS",
-    "Aptos",
-    "Segoe UI",
+    "Cormorant Garamond",
+    "Times New Roman",
     system-ui,
-    sans-serif;
+    serif;
   font-synthesis: none;
   font-weight: 400;
   line-height: 1.5;
@@ -25,9 +27,9 @@
 
 html {
   background:
-    radial-gradient(circle at 0% 0%, rgba(255, 145, 205, 0.78), transparent 34%),
-    radial-gradient(circle at 100% 10%, rgba(110, 181, 255, 0.7), transparent 34%),
-    linear-gradient(180deg, #fff1f9 0%, #edf4ff 44%, #f4f9ff 100%);
+    radial-gradient(circle at 0% 0%, rgba(255, 158, 210, 0.58), transparent 34%),
+    radial-gradient(circle at 100% 10%, rgba(128, 191, 255, 0.52), transparent 34%),
+    linear-gradient(180deg, #fff5fb 0%, #f2f6ff 44%, #f7fbff 100%);
   scroll-behavior: smooth;
 }
 

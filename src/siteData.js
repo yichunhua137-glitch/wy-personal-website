@@ -5,9 +5,6 @@ export const navItems = [
   { to: '/about', label: 'About' },
   { to: '/photos', label: 'Photos' },
   { to: '/resume', label: 'Resume' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/skills', label: 'Skills' },
-  { to: '/experience', label: 'Experience' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -35,15 +32,15 @@ export const heroStats = [
 export const storyCards = [
   {
     title: 'Builder',
-    text: 'Yi builds across frontend, backend, algorithms, and project structure, with a preference for systems that feel organized and purposeful.',
+    text: 'I like building across frontend, backend, algorithms, and overall project structure, especially when the final system feels organized and purposeful.',
   },
   {
     title: 'Competitor',
-    text: 'Her background includes competitive programming and cybersecurity problem solving, which shows up in the way she approaches logic and debugging.',
+    text: 'Competitive programming and cybersecurity problem solving shaped the way I approach logic, debugging, and technical problem breakdown.',
   },
   {
     title: 'Communicator',
-    text: 'She also has teaching and marketing experience, which helps balance technical execution with explanation, presentation, and user clarity.',
+    text: 'Teaching and marketing experience also helped me balance technical execution with explanation, presentation, and user clarity.',
   },
 ]
 
@@ -101,6 +98,20 @@ export const experiences = [
 
 export const projects = [
   {
+    title: 'Helldivers Interactive Web System',
+    tag: 'Frontend System Design',
+    stack: 'React, Vite, JavaScript, HTML, CSS',
+    period: 'Aug 2025 - Present',
+    href: 'https://www.wearehelldivers.xyz/',
+    text:
+      'Collaborated as a core frontend developer on an interactive Helldivers-inspired web system with dynamic user interaction, reusable UI sections, and game-like page flows.',
+    bullets: [
+      'Designed reusable React components for navigation sections, stratagem-style cards, interactive UI elements, and state-driven flows.',
+      'Implemented character-driven interaction logic to replace simple click navigation with more dynamic transitions.',
+      'Structured the frontend with modular components, reusable CSS layouts, and organized state to support future expansion.',
+    ],
+  },
+  {
     title: 'Bee Population Modeling and Hive Placement Optimization',
     tag: 'Algorithms + Data Modeling',
     stack: 'C++, Python',
@@ -111,19 +122,6 @@ export const projects = [
       'Implemented a C++ DFS-style backtracking search to evaluate valid hive placements under placement rules.',
       'Used Python to process ecological data, generate model inputs, and compare predicted outcomes across placement strategies.',
       'Combined algorithm design with real-world modeling rather than treating the problem as a purely abstract search exercise.',
-    ],
-  },
-  {
-    title: 'Helldivers Interactive Web System',
-    tag: 'Frontend System Design',
-    stack: 'React, Vite, JavaScript, HTML, CSS',
-    period: 'Aug 2025 - Present',
-    text:
-      'Collaborated as a core frontend developer on an interactive Helldivers-inspired web system with dynamic user interaction, reusable UI sections, and game-like page flows.',
-    bullets: [
-      'Designed reusable React components for navigation sections, stratagem-style cards, interactive UI elements, and state-driven flows.',
-      'Implemented character-driven interaction logic to replace simple click navigation with more dynamic transitions.',
-      'Structured the frontend with modular components, reusable CSS layouts, and organized state to support future expansion.',
     ],
   },
   {
@@ -173,7 +171,7 @@ export const skillGroups = [
   {
     title: 'Tools and Platforms',
     description: 'Everyday workflow tools used for design, development, editing, version control, and deployment support.',
-    items: ['n8n', 'WordPress', 'Figma', 'Git', 'Linux', 'Visual Studio Code', 'npm', 'ESLint'],
+    items: ['n8n', 'WordPress', 'Wix Studio', 'Figma', 'Git', 'Linux', 'Visual Studio Code', 'npm', 'ESLint'],
   },
 ]
 
@@ -198,6 +196,7 @@ export const skillLogoMap = {
   Supabase: '/skill-logos/supabase.svg',
   Vite: '/skill-logos/vite.svg',
   'Visual Studio Code': '/skill-logos/vscode.png',
+  'Wix Studio': '/skill-logos/wix.png',
   WordPress: '/skill-logos/wordpress.svg',
 }
 
@@ -222,6 +221,7 @@ export const skillLinkMap = {
   Supabase: 'https://supabase.com/',
   Vite: 'https://vite.dev/',
   'Visual Studio Code': 'https://code.visualstudio.com/',
+  'Wix Studio': 'https://www.wix.com/studio',
   WordPress: 'https://wordpress.org/',
 }
 

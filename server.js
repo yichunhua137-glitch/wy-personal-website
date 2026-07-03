@@ -1,6 +1,8 @@
 import { createServer } from 'node:http'
 import { existsSync, readFileSync } from 'node:fs'
+import { createAdminToken, verifyAdminToken, verifyPassword } from './lib/adminAuth.js'
 import { createChatReply } from './lib/portfolioAssistant.js'
+import { getAdminStats, recordEvent, recordVisit } from './lib/supabaseAdmin.js'
 
 const PORT = Number(process.env.PORT ?? 3001)
 
@@ -51,7 +53,7 @@ function readJsonBody(request) {
 function sendJson(response, statusCode, data) {
   response.writeHead(statusCode, {
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
   })
@@ -77,6 +79,45 @@ async function handleChat(request, response) {
   sendJson(response, 200, { reply })
 }
 
+async function handleAnalyticsVisit(request, response) {
+  const body = await readJsonBody(request)
+  const result = await recordVisit(body.visitorId)
+  sendJson(response, 200, result)
+}
+
+async function handleAnalyticsEvent(request, response) {
+  const body = await readJsonBody(request)
+  await recordEvent(body)
+  sendJson(response, 200, { ok: true })
+}
+
+async function handleAdminLogin(request, response) {
+  const body = await readJsonBody(request)
+  const isValid = await verifyPassword(body.password)
+
+  if (!isValid) {
+    sendJson(response, 401, { error: 'Invalid password.' })
+    return
+  }
+
+  const token = await createAdminToken()
+  sendJson(response, 200, { token })
+}
+
+async function handleAdminStats(request, response) {
+  const authorization = request.headers.authorization ?? ''
+  const token = authorization.startsWith('Bearer ') ? authorization.slice(7) : ''
+  const isAuthorized = await verifyAdminToken(token)
+
+  if (!isAuthorized) {
+    sendJson(response, 401, { error: 'Unauthorized.' })
+    return
+  }
+
+  const stats = await getAdminStats()
+  sendJson(response, 200, stats)
+}
+
 loadLocalEnv()
 
 createServer(async (request, response) => {
@@ -96,8 +137,51 @@ createServer(async (request, response) => {
     return
   }
 
+  if (request.method === 'POST' && request.url === '/api/analytics/visit') {
+    try {
+      await handleAnalyticsVisit(request, response)
+    } catch (error) {
+      sendJson(response, 500, {
+        error: error instanceof Error ? error.message : 'Failed to record visit.',
+      })
+    }
+    return
+  }
+
+  if (request.method === 'POST' && request.url === '/api/analytics/event') {
+    try {
+      await handleAnalyticsEvent(request, response)
+    } catch (error) {
+      sendJson(response, 500, {
+        error: error instanceof Error ? error.message : 'Failed to record event.',
+      })
+    }
+    return
+  }
+
+  if (request.method === 'POST' && request.url === '/api/admin/login') {
+    try {
+      await handleAdminLogin(request, response)
+    } catch (error) {
+      sendJson(response, 500, {
+        error: error instanceof Error ? error.message : 'Login failed.',
+      })
+    }
+    return
+  }
+
+  if (request.method === 'GET' && request.url === '/api/admin/stats') {
+    try {
+      await handleAdminStats(request, response)
+    } catch (error) {
+      sendJson(response, 500, {
+        error: error instanceof Error ? error.message : 'Failed to load admin stats.',
+      })
+    }
+    return
+  }
+
   sendJson(response, 404, { error: 'Not found.' })
 }).listen(PORT, () => {
   console.log(`Ask Yi Wei API server running on http://localhost:${PORT}`)
 })
-

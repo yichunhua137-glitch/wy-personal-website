@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import portraitImage from '../../photos/05c07af5dffb063b220c865eb4adc06e.jpg'
+import portraitImage from '../../e1966cb83cf6f747568d003df42cf989.jpg'
 import PortfolioAssistant from '../components/PortfolioAssistant'
 import { heroStats, highlights, profile } from '../siteData'
 
@@ -10,7 +10,7 @@ function HomePage() {
         <div className="hero-main">
           <div className="hero-main-grid">
             <div className="hero-copy-block">
-              <p className="eyebrow">Personal Portfolio</p>
+              <p className="eyebrow">Yi Wei</p>
               <h1>{profile.name}</h1>
               <p className="hero-text">
                 {profile.headline}
@@ -66,12 +66,8 @@ function HomePage() {
                 style={{ backgroundImage: `url("${portraitImage}")` }}
               ></div>
               <div className="home-photo-content">
-                <p className="eyebrow">Photo Spotlight</p>
+                <p className="eyebrow">Portrait</p>
                 <h3>Portrait</h3>
-                <p className="home-card-copy">
-                  A softer editorial portrait treatment that balances the
-                  technical resume with a more personal first impression.
-                </p>
                 <Link className="button secondary" to="/about">
                   View Profile
                 </Link>
@@ -87,7 +83,7 @@ function HomePage() {
                 title="Google Map showing University of Waterloo"
               ></iframe>
               <div className="home-map-content">
-                <p className="eyebrow">Current Base</p>
+                <p className="eyebrow">Waterloo</p>
                 <h3>Waterloo, Ontario</h3>
                 <p className="home-card-copy">
                   Studying and building around the University of Waterloo, with

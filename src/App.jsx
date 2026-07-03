@@ -2,13 +2,11 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout'
 import AboutPage from './pages/AboutPage'
+import AdminPage from './pages/AdminPage'
 import ContactPage from './pages/ContactPage'
-import ExperiencePage from './pages/ExperiencePage'
 import HomePage from './pages/HomePage'
 import PhotosPage from './pages/PhotosPage'
-import ProjectsPage from './pages/ProjectsPage'
 import ResumePage from './pages/ResumePage'
-import SkillsPage from './pages/SkillsPage'
 
 function App() {
   return (
@@ -18,9 +16,10 @@ function App() {
         <Route element={<AboutPage />} path="about" />
         <Route element={<PhotosPage />} path="photos" />
         <Route element={<ResumePage />} path="resume" />
-        <Route element={<ProjectsPage />} path="projects" />
-        <Route element={<SkillsPage />} path="skills" />
-        <Route element={<ExperiencePage />} path="experience" />
+        <Route element={<AdminPage />} path="admin" />
+        <Route element={<Navigate replace to="/resume" />} path="projects" />
+        <Route element={<Navigate replace to="/resume" />} path="skills" />
+        <Route element={<Navigate replace to="/resume" />} path="experience" />
         <Route element={<ContactPage />} path="contact" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Route>
